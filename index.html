@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yoga</title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM6a7vn_pP5oz8rq9zU0twhNC-14OCuERzEA&s">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+     
+     
+     <style>
+        
+        @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    .slide-in {
+      animation: slideIn 1.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 900px; /* Full viewport height */
+      overflow: hidden;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the entire container */
+      transform: translate(-50%, -50%);
+      z-index: -1; /* Places the video behind other content */
+    }
+
+    /* Text Overlay */
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      z-index: 1; Ensures the text is above the video
+    }
+    .box{
+        position: relative;
+        
+    }
+    .box1{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .box3{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .row{
+        display: flex;
+        justify-content: space-evenly; 
+    }
+    .col-8 input:hover{
+      background-color: rgba(76, 237, 159, 0.708);
+    }
+    </style>
+  
+</head>
+<body>
+   
+    <!-- nav -->
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          
+              
+                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+               
+                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex shrink-0 items-center">
+                <img class="h-15 rounded-full w-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN2wKrjxmWcItGHP8cu69LZIYyrLt0jZhIqw&s" alt="Your Company">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex pt-3 space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                  <a href="#clas" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Classes</a>
+                  <a href="#clas" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Booking</a>
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+       
+      </nav>
+      <!-- note -->
+       <div class="container mx-auto bg-no-repeat bg-cover" style="background-image: url(https://t3.ftcdn.net/jpg/03/30/49/72/360_F_330497250_ZzWZ6qrLWJ973kgTLI2foKjDoLBtIPbi.jpg);">
+        <div class="flex justify-center items-center h-screen">
+          <div class="text-center pt-40">
+            <h1 class="text-5xl text-white font-bold slide-in">Change Your Life By</h1>
+            <h2 class="text-5xl text-white font-bold fade-in">Yoga & Meditation</h2>
+          </div>
+        </div>
+       </div>
+    <!-- info -->
+    <div class="video-container">
+        <!-- Video -->
+        <video  class="video mt-5"  autoplay muted loop>
+          <source src="./184120-872701374_medium.mp4" type="video/mp4">
+        </video>
+    
+        <!-- Text Overlay -->
+        <div class="text-overlay  mt-5">
+          <h1 class="text-6xl font-bold">Benifits of Yoga</h1>
+          <div>
+           <div  class="container mx-auto flex justify-center items-center mt-5">
+            <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3  mx-10 bg-slate-900/80">
+                <img  class="ico w-20 mx-10" src=".//yoga icons/cobra.png" alt="icon">     
+                 <h2 class="text-2xl font-bold underline">Strong Body life</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim.</p>
+                </div>
+                <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3  mx-10 bg-slate-900/80">
+                  <img  class="ico w-20 mx-10" src=".//yoga icons/yoga.png" alt="icon">     
+                   <h2 class="text-2xl font-bold underline">increased flexibility</h2>
+                        <p>  Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim.</p>
+                  </div>
+                  <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3 mx-10 bg-slate-900/80">
+                      <img  class="ico w-20 mx-10 " src=".//yoga icons/extended.png" alt="icon">     
+                       <h2 class="text-2xl font-bold underline">healthy lifestyle </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim.</p>
+                      </div> 
+           </div>
+           <div  class="container mx-auto flex justify-center items-center mt-5">
+            <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3  mx-10 bg-slate-900/80">
+                <img  class="ico w-20 mx-10" src=".//yoga icons/lotus.png" alt="icon">     
+                 <h2 class="text-2xl font-bold underline">  Increases blood flow</h2>
+                <p> Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim           </p>
+                 </div>
+                <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3  mx-10 bg-slate-900/80">
+                  <img  class="ico w-20 mx-10" src=".//yoga icons/warrior.png" alt="icon">     
+                   <h2 class="text-2xl font-bold underline">Drops blood pressure</h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim.</p>
+                  </div>
+                  <div class="text-center w-70 h-70 border-2 border-gray-300 rounded-lg py-3 mx-10 bg-slate-900/80">
+                      <img  class="ico w-20 mx-10" src=".//yoga icons/yoga-pose (1).png" alt="icon">     
+                       <h2 class="text-2xl font-bold underline">Regulates adrenal gland</h2>
+                            <p>    Lorem ipsum dolor sit amet, consectetur blandit magna adipiscing elit ncididunt labore et dolore magna aliqua enim.</p>
+                      </div> 
+           </div>
+         
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- class -->
+<div style="display: flex; ">
+  <div style="width: 50%; ">
+    <div class="bo">
+    <div class=" bo" >
+     <img src=".//yoga icons/1.png"  alt="class">
+    </div>
+    </div>
+  </div>
+  <div style="width: 50%; ">
+    <div class="box" id="clas">
+      <div class=" box1" >
+       <img src=".//yoga icons/2.png" alt="class">
+      </div>
+      <div class="box3 container font-bold text-4xl pt-120">
+     
+        <div class="row ">
+          <div class="col-4 mt-5">Name </div>
+          <div class="col-8  mt-6">: <input type="text" class="bg-stone-50/20 rounded-full"></div>
+      </div>
+      <div class="row ">
+          <div class="col-4  mt-3">Age  </div>
+          <div class="col-8 mt-3">: <input type="text" class="bg-stone-50/20 rounded-full"></div>
+      </div>
+      <div class="row">
+          <div class="col-4  mt-3">Number </div>
+          <div class="col-8  mt-3">: <input type="text" class="bg-stone-50/20 rounded-full"></div>
+      </div>
+      <div class="row">
+          <div class="col-4  mt-3">Email </div>
+          <div class="col-8  mt-3">: <input type="text" class="bg-stone-50/20 rounded-full"></div>
+      </div>
+      <div class="row">
+        <div class="col mt-5">
+          <button class="bg-grey-900 hover:bg-green-400/60 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+        Join
+      </button>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
